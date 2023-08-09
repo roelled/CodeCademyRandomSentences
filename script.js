@@ -1,12 +1,22 @@
 // Arrays that contain the words the function will be able to pull from.
-const subjectWords = [];
-const verbWords = [];
-const objectWords = [];
+const subjectWords = ["I", "You", "They", "We", "Diane", "James", "The helicopter", "The Dog", "The mouse"];
+const verbWords = ["eats", "plays", "reads", "shows", "nibles", "creates", "sees", "feels", "restores"];
+const objectWords = ["ass", "ball", "tennis", "football", "code", "wood"];
+
+createRandomWord(subjectWords, verbWords, objectWords);
 
 // Function that creates random words from the given arrays.
 function createRandomWord(subject, verb, object){
 
-    
+  let sentence = "";
+
+  const subNum = Math.floor(Math.random() * subjectWords.length);
+  const verbNum = Math.floor(Math.random() * verbWords.length);
+  const objNum = Math.floor(Math.random() * objectWords.length);
+
+  sentence = subject[subNum] + " " + verb[verbNum] + " " + object[objNum] + ".";
+  
+  pushSentenceToDb(sentence);
 
 };
 
