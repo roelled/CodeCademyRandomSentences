@@ -32,10 +32,15 @@ function pushSentenceToDb(sentence){
         if (err) {
             return console.log(err.message);
         }
+        // get the last inserted sentence
+        console.log(`The following row has been inserted: ${sentence}`);
     });
 
     // close the database connection
     db.close();
+
+    console.log("The following sentences have been created:");
+    readSentencesFromDb();
 
 };
 
@@ -63,6 +68,3 @@ function readSentencesFromDb(){
     db.close();
 
 };
-
-
-readSentencesFromDb();
